@@ -1,44 +1,55 @@
 package grafica.ventana;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.rmi.RemoteException;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
-public class VentanaInicial {
+import com.ude.grafica.controladores.ControladorCliente;
 
+import grafica.controlador.ControladorVentanaInicial;
+
+public class VentanaInicial extends JFrame {
+
+	private boolean online;
+	private ControladorVentanaInicial controller;
+	
 	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaInicial window = new VentanaInicial();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	
 	public VentanaInicial() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
+		controller = new ControladorVentanaInicial(this);
+		setVisible(false);
+		online=false;
+		
+		
+		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 590, 551);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 55, 554, 263);
+		frame.getContentPane().add(scrollPane);
+		
+		frame.setVisible(true);
+		System.out.println("finalizo el constructor de ventana");
 	}
+	
+
+
 
 
 

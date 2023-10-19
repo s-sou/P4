@@ -4,7 +4,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import logicaPersistencia.excepciones.ConnectionException;
+import logicaPersistencia.excepciones.*;
 import logicaPersistencia.excepciones.JugueteException;
 import logicaPersistencia.excepciones.NinioException;
 import logicaPersistencia.excepciones.PersistenciaException;

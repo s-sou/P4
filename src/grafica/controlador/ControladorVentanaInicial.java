@@ -38,7 +38,7 @@ public class ControladorVentanaInicial {
         	ventana.mostrarMensaje("ERROR CONEXION REMOTA!!");
         } 
         catch (IOException e) { 
-        	e.printStackTrace();
+        	ventana.mostrarMensaje("ERROR LEYENDO PROPERTIES");
         }
     }
 }

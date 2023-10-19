@@ -25,6 +25,7 @@ public class MainServidor {
 			try {
 				f = new Fachada();
 			} catch (RemoteException e) {
+				System.out.println("1");
 				throw new NetworkException("ERROR DE RED");
 			}
 			try { 

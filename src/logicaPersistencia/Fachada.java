@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import logicaPersistencia.accesoBD.AccesoBD;
-import logicaPersistencia.excepciones.ConnectionException;
+import logicaPersistencia.excepciones.*;
 import logicaPersistencia.excepciones.JugueteException;
 import logicaPersistencia.excepciones.NinioException;
 import logicaPersistencia.excepciones.PersistenciaException;
@@ -22,6 +22,10 @@ import logicaPersistencia.valueObjects.VONinio;
 
 public class Fachada extends UnicastRemoteObject implements IFachada {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Connection con = null;
 	private String error;
 	private String url;
@@ -29,19 +33,19 @@ public class Fachada extends UnicastRemoteObject implements IFachada {
 	private String password;
 
 	
-	public Fachada() throws RemoteException {
+		public Fachada() throws RemoteException {
 		try {
 			Properties p = new Properties();
 			String nomArch = "config/datos.properties";
 			p.load(new FileInputStream(nomArch));
-			url = p.getProperty("url");
+			url = p.getProperty("ip");
 			user = p.getProperty("user");
 			password = p.getProperty("password");
 		}catch (IOException e) {
 			throw new PropertiesException("Error de datos");
 		}
 		
-	};
+	}
 
 	//Metodo 1
 	public void nuevoNinio (VONinio vo) throws PersistenciaException, NinioException,ConnectionException {
