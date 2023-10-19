@@ -40,7 +40,7 @@ public class VentanaInicial {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-}
+
 
 public void setOnline(boolean b) {
 	// TODO Auto-generated method stub
