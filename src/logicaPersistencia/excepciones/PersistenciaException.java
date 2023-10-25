@@ -1,6 +1,6 @@
 package logicaPersistencia.excepciones;
 
-	public class PersistenciaException extends RuntimeException {
+	public class PersistenciaException extends Exception {
 
 		private static final long serialVersionUID = 1L;
 		private int codigo;

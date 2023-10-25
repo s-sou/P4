@@ -27,6 +27,8 @@ public class VentanaInicial extends JFrame {
 	private ControladorVentanaInicial controller;
 	
 	private JFrame frame;
+	private JTextField textField;
+	private JTextField txtIdNio;
 	
 	public VentanaInicial() {
 		controller = new ControladorVentanaInicial(this);
@@ -40,9 +42,17 @@ public class VentanaInicial extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 55, 554, 263);
-		frame.getContentPane().add(scrollPane);
+		textField = new JTextField();
+		textField.setBounds(60, 83, 150, 39);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		txtIdNio = new JTextField();
+		txtIdNio.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIdNio.setText("ID NIÑO");
+		txtIdNio.setBounds(60, 34, 150, 39);
+		frame.getContentPane().add(txtIdNio);
+		txtIdNio.setColumns(10);
 		
 		frame.setVisible(true);
 		System.out.println("finalizo el constructor de ventana");
@@ -72,5 +82,4 @@ public void setVisible(boolean b) {
 	// TODO Auto-generated method stub
 	
 }
-
 }

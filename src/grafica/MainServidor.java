@@ -1,5 +1,4 @@
 package grafica;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;

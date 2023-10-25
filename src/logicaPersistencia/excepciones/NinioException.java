@@ -1,6 +1,6 @@
 package logicaPersistencia.excepciones;
 
-	public class NinioException extends RuntimeException {
+	public class NinioException extends Exception {
 		private static final long serialVersionUID = 1L;
 		private String codigo;
 		

@@ -30,47 +30,30 @@ public class Fachada extends UnicastRemoteObject implements IFachada {
 	private String error;
 	private String url;
 	private String user;
-	private String password;
-
-	/*		//Fachada singleton:
-	 
+	private String password; 
 	private static Fachada instancia;
 	
-	private Fachada() throws RemoteException {
-		try {
-			Properties p = new Properties();
-			String nomArch = "config/datos.properties";
-			p.load(new FileInputStream(nomArch));
-			url = p.getProperty("url");
-			user = p.getProperty("user");
-			password = p.getProperty("password");
-		}catch (IOException e) {
-			throw new PropertiesException("Error de datos");
-		}
+	private Fachada(String url, String usr, String password) throws RemoteException {
+			this.url = url;
+			this.user = usr;
+			this.password = password;		
 	};
 	
-	public static Fachada getIstancia(){
+	public static Fachada getIstancia() throws RemoteException, PropertiesException {
 	
 		if (instancia == null)
-			instancia = new Fachada();
-	
+			try {
+				Properties p = new Properties();
+				String nomArch = "config/datos.properties";
+				p.load(new FileInputStream(nomArch));
+				instancia = new Fachada(p.getProperty("url"), p.getProperty("user"), p.getProperty("password"));			
+			}catch(IOException e) {
+				throw new PropertiesException("Error de datos");
+			}
 		return instancia;
+	};
 	
-	*/
 	
-		public Fachada() throws RemoteException {
-		try {
-			Properties p = new Properties();
-			String nomArch = "config/datos.properties";
-			p.load(new FileInputStream(nomArch));
-			url = p.getProperty("ip");
-			user = p.getProperty("user");
-			password = p.getProperty("password");
-		}catch (IOException e) {
-			throw new PropertiesException("Error de datos");
-		}
-		
-	}
 
 	//Metodo 1
 	public void nuevoNinio (VONinio vo) throws PersistenciaException, NinioException,ConnectionException {

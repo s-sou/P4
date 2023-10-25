@@ -1,6 +1,6 @@
 package logicaPersistencia.excepciones;
 
-	public class JugueteException extends RuntimeException {
+	public class JugueteException extends Exception {
 		private static final long serialVersionUID = 1L;
 		private String codigo;
 		
